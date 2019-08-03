@@ -1,0 +1,5 @@
+<p>登録手続きをお願いいたします。 <%= @email %>!</p>
+
+<p>登録はまだ完了していません。下記のリンクから登録を完了してください。</p>
+
+<p><%= link_to '登録する', confirmation_url(@resource, confirmation_token: @token) %></p>
