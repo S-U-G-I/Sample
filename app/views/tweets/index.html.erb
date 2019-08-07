@@ -1,0 +1,7 @@
+<div class="container" >
+  <% @tweets.each do |t| %>
+    </br></br><%= t.name %></br>
+    <%= t.description %></br>
+    <%= image_tag (t.picture_url) %>
+  <% end %>
+</div>

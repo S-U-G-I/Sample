@@ -1,0 +1,23 @@
+<div class="container">
+  <%= form_for @tweet do |f| %>
+  
+  <h1>投稿する</h1>
+  
+ <div class="field">
+   <p>タイトル</p>
+    <%= f.text_field :name %>
+ </div>
+ 
+ <div class="field">
+   <p>コメント</p>
+   <%= f.text_field :description %>
+ 
+ <div class="field">
+   <%= f.file_field :picture %>
+ </div>
+ 
+ <%= f.submit "投稿" %>
+ 
+ </div>
+ 
+ <% end %>
