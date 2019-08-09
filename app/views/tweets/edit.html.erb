@@ -1,7 +1,7 @@
 <div class="container">
   <%= form_for @tweet do |f| %>
   
-  <h1>投稿する</h1>
+  <h1>編集する</h1>
   
  <div class="field">
    <p>タイトル</p>
@@ -17,7 +17,7 @@
    <%= f.file_field :picture %></br>
  </div>
  
- <%= f.submit "投稿" %>
+ <%= f.submit "投稿" %>|<%= link_to "削除", tweet_path(@tweet.id), method: :delete %>
  
  </div>
  
