@@ -1,8 +1,8 @@
 <div class="container" >
-  <% @tweets.each do |t| %>
-    </br></br><%= t.name %></br>
-    <%= t.description %></br>
-    <%= image_tag (t.picture_url) %></br>
-    <%= link_to "編集", edit_tweet_path(t)%>
+  <% @tweets.each do |f| %>
+  <%= f.user.name %>
+    </br><%= f.description %></br>
+    <%= image_tag (f.picture_url) %></br>
+    <%= link_to "編集", edit_tweet_path(f)%>|<%= link_to "詳細",tweet_path(f),method: :get %></br></br>
   <% end %>
 </div>

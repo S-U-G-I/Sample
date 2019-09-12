@@ -1,0 +1,19 @@
+<div class="container" >
+     <%= @tweet.user.name %>
+    </br><%= @tweet.description %></br>
+    <%= image_tag (@tweet.picture_url) %></br>
+    
+    <% @comments.each do |c| %>
+      <%= c.user.name %>
+      <%= c.text %></br></br>
+    <% end %>
+    
+    <% if user_signed_in? %>
+      <%=form_for [@tweet, @comment] do |f| %>
+      <%= f.text_field :text %>
+      <%= f.submit "コメントする" %>
+      <% end %>
+    <% end %>
+    
+    <%= link_to "戻る", root_path %>
+</div>

@@ -4,11 +4,6 @@
   <h1>編集する</h1>
   
  <div class="field">
-   <p>タイトル</p>
-    <%= f.text_field :name %>
- </div>
- 
- <div class="field">
    <p>コメント</p>
    <%= f.text_field :description %>
  </div></br>
@@ -17,8 +12,10 @@
    <%= f.file_field :picture %></br>
  </div>
  
- <%= f.submit "投稿" %>|<%= link_to "削除", tweet_path(@tweet.id), method: :delete %>
+ <%= f.submit "投稿" %>
+ <% end %></br>
+ <%= button_to "削除", tweet_path(@tweet.id), method: :delete, data: { confirm: '削除しますか？' } %>
  
  </div>
  
- <% end %>
+ 
