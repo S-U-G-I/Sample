@@ -1,8 +1,13 @@
 <div class="container" >
   <% @tweets.each do |f| %>
-  <%= f.user.name %>
+  <%= link_to f.user.name, user_path(f.user.id), method: :get %>
     </br><%= f.description %></br>
     <%= image_tag (f.picture_url) %></br>
-    <%= link_to "編集", edit_tweet_path(f)%>|<%= link_to "詳細",tweet_path(f),method: :get %></br></br>
+    
+    <% if user_signed_in? && current_user.id==f.user.id %>
+     <%= link_to "編集", edit_tweet_path(f)%>
+    <% end %>
+    
+    <%= link_to "詳細",tweet_path(f),method: :get %></br></br>
   <% end %>
 </div>

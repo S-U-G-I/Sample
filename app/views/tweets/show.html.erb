@@ -1,11 +1,14 @@
 <div class="container" >
-     <%= @tweet.user.name %>
+     <%= link_to @tweet.user.name, user_path(@tweet.user.id), method: :get %>
     </br><%= @tweet.description %></br>
-    <%= image_tag (@tweet.picture_url) %></br>
+    <%= image_tag (@tweet.picture_url) %></br></br>
     
     <% @comments.each do |c| %>
-      <%= c.user.name %>
-      <%= c.text %></br></br>
+      <%= link_to c.user.name, user_path(c.user.id), method: :get %>
+      <%= c.text %>
+      <% if user_signed_in? && c.user_id==current_user.id %>
+        <%= button_to "削除する", tweet_comment_path(c), method: :delete, data: { confirm: '削除しますか？' } %>
+      <% end %></br></br>
     <% end %>
     
     <% if user_signed_in? %>
