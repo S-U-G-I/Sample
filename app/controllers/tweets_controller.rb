@@ -22,6 +22,7 @@ class TweetsController < ApplicationController
     redirect_to root_path
   end
   
+  
   def edit
     @tweet=Tweet.find_by(id: params[:id])
   end
