@@ -1,4 +1,16 @@
 <div class="container" >
- <h1>マイページ</h1>
-<p>名前 : <%= @user.name %></p>
+<h1>名前 : <%= @user.name %>さんのページ</h1>
+<h3>投稿一覧</h3>
+
+ <% @user.tweets.each do |u| %>
+   <%= u.description %><br>
+   <%= image_tag (u.picture_url) %><br>
+   
+    <% if user_signed_in? && current_user.id==u.user.id %>
+     <%= link_to "編集", edit_tweet_path(u)%>
+    <% end %>
+    
+    <%= link_to "詳細",tweet_path(u),method: :get %></br></br>
+<% end %>
+ 
 </div>
