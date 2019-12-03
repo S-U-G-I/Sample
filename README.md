@@ -1,24 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ログイン、ログアウト
+写真投稿、削除
+投稿に対してのコメント投稿、閲覧
+ユーザー個別ページ
+ユーザーの投稿一覧
+を実装しました。新規登録もできますが、ログインページに行くとテストユーザーのアドレスとパスワードが書いてあるので、そちらでもログインできます。
